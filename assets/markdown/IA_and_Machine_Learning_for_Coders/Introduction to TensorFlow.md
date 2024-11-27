@@ -10,19 +10,19 @@ La programación tradicional implica escribir reglas, expresadas en un lenguaje 
 
 Por ejemplo, considera un juego como el popular Breakout. El código determina el movimiento de la pelota, el puntaje y las diversas condiciones para ganar o perder el juego. Piensa en el escenario donde la pelota rebota contra un ladrillo, como se muestra en la Figura 1-1.
 
-![Figura 1-1. Código en un juego de Breakout](assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.1.png)
+![Figura 1-1. Código en un juego de Breakout](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.1.png)
 
 Aquí, el movimiento de la pelota puede determinarse mediante sus propiedades dx y dy. Cuando la pelota golpea un ladrillo, este se elimina, y la velocidad de la pelota aumenta y cambia de dirección. El código actúa sobre los datos relacionados con la situación del juego.
 
 Alternativamente, considera un escenario de servicios financieros. Tienes datos sobre las acciones de una empresa, como su precio actual y sus ganancias actuales. Puedes calcular un valioso indicador llamado P/E (precio dividido entre ganancias) utilizando un código como el que se muestra en la Figura 1-2.
 
-![Figura 1-2. Código en un escenario de servicios financieros](assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.2.png)
+![Figura 1-2. Código en un escenario de servicios financieros](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.2.png)
 
 Tu código lee el precio, lee las ganancias y devuelve un valor que resulta de dividir el primero por el segundo.
 
 Si intentara resumir la programación tradicional en un solo diagrama, se parecería a lo que se muestra en la Figura 1-3.
 
-![Figura 1-3. Vista de alto nivel de la programación tradicional](assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.3.png)
+![Figura 1-3. Vista de alto nivel de la programación tradicional](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.3.png)
 
 Como puedes ver, tienes reglas expresadas en un lenguaje de programación. Estas reglas actúan sobre los datos, y el resultado son las respuestas.
 
@@ -33,22 +33,22 @@ Por ejemplo, considera la detección de actividades físicas. Los monitores de a
 
 La Figura 1-4 muestra un algoritmo ingenuo para detectar si una persona está caminando. Este puede basarse en la velocidad de la persona. Si la velocidad es menor a cierto valor, podemos determinar que probablemente está caminando.
 
-![Figura 1-4. Algoritmo para la detección de actividad (caminar)](assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.4.png)
+![Figura 1-4. Algoritmo para la detección de actividad (caminar)](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.4.png)
 
 Si tomamos como base la velocidad, podríamos extender este algoritmo para detectar si una persona está corriendo (Figura 1-5).
 
-![Figura 1-5. Extensión del algoritmo para detectar si alguien está corriendo](assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.5.png)
+![Figura 1-5. Extensión del algoritmo para detectar si alguien está corriendo](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.5.png)
 
 Como se puede observar, usando la velocidad, podríamos decir que si es menor a un valor específico (por ejemplo, 4 mph), la persona está caminando; de lo contrario, está corriendo. Aún funciona, de cierta forma.
 
 Extendiendo a otras actividades
 Ahora, supongamos que queremos extender este algoritmo para otra actividad popular de fitness, como andar en bicicleta. El algoritmo podría lucir como en la Figura 1-6.
 
-![Figura 1-6. Extensión del algoritmo para detectar si alguien está andando en bicicleta](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.6.png)
+![Figura 1-6. Extensión del algoritmo para detectar si alguien está andando en bicicleta](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.6.png)
 
 Reconozco que es un enfoque ingenuo, ya que solo considera la velocidad. Por ejemplo, algunas personas corren más rápido que otras, o podrías correr cuesta abajo más rápido de lo que pedaleas cuesta arriba. Pero, en general, el algoritmo aún funciona. Sin embargo, ¿qué sucede si queremos implementar otro escenario, como jugar golf (Figura 1-7)?
 
-![Figura 1-7. ¿Cómo escribir un algoritmo para detectar golf?](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.7.png)
+![Figura 1-7. ¿Cómo escribir un algoritmo para detectar golf?](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.7.png)
 
 Aquí nos encontramos con un problema. ¿Cómo determinamos que alguien está jugando golf usando esta metodología? Una persona podría caminar un poco, detenerse, realizar alguna actividad, caminar nuevamente, detenerse, etc. ¿Cómo podemos identificar que esto es golf?
 
@@ -60,19 +60,19 @@ Entra en escena el aprendizaje automático
 ## De la Programación al Aprendizaje
 Veamos nuevamente el diagrama que utilizamos para demostrar qué es la programación tradicional (Figura 1-8). Aquí tenemos reglas que actúan sobre los datos y nos dan respuestas. En nuestro escenario de detección de actividad, los datos eran la velocidad a la que la persona se movía; a partir de ello, podíamos escribir reglas para detectar su actividad, ya sea caminar, andar en bicicleta o correr. Nos encontramos con un obstáculo cuando se trataba de jugar golf, porque no pudimos formular reglas que describieran cómo sería esa actividad.
 
-![Figura 1-8. El flujo de programación tradicional](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.8.png)
+![Figura 1-8. El flujo de programación tradicional](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.8.png)
 
 Pero, ¿qué pasaría si invertimos los ejes de este diagrama? En lugar de que nosotros definamos las reglas, ¿qué tal si proporcionamos las respuestas y, junto con los datos, encontramos una manera de descubrir cuáles podrían ser las reglas?
 
 La Figura 1-9 muestra cómo se vería esto. Podemos considerar este diagrama de alto nivel como una definición de aprendizaje automático.
 
-![Figura 1-9. Cambiando los ejes para obtener aprendizaje automático](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.9.png)
+![Figura 1-9. Cambiando los ejes para obtener aprendizaje automático](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.9.png)
 
 ¿Cuáles son las implicaciones de esto? Ahora, en lugar de intentar descifrar cuáles son las reglas, recopilamos muchos datos sobre nuestro escenario, etiquetamos esos datos, y la computadora puede determinar qué reglas hacen que una pieza de datos corresponda a una etiqueta en particular, mientras que otra pieza corresponde a una etiqueta diferente.
 
 ¿Cómo funcionaría esto en nuestro escenario de detección de actividad? Podemos observar todos los sensores que nos proporcionan datos sobre esta persona. Si tienen un dispositivo portátil que detecta información como frecuencia cardíaca, ubicación, velocidad, etc., y recopilamos muchas instancias de estos datos mientras realizan diferentes actividades, terminamos con un conjunto de datos que dice: “Esto es cómo se ve caminar”, “Esto es cómo se ve correr”, y así sucesivamente (Figura 1-10).
 
-![Figura 1-10. De la codificación al aprendizaje automático: recopilación y etiquetado de datos](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.10.png)
+![Figura 1-10. De la codificación al aprendizaje automático: recopilación y etiquetado de datos](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.10.png)
 
 Ahora nuestro trabajo como programadores cambia: ya no se trata de formular reglas para determinar las actividades, sino de escribir el código que haga coincidir los datos con las etiquetas. Si logramos hacer esto, podemos ampliar los escenarios que podemos implementar con código.
 
@@ -85,7 +85,7 @@ TensorFlow es una plataforma de código abierto para crear y utilizar modelos de
 
 Arquitectura de alto nivel de TensorFlow
 
-![Figura 1-11. Arquitectura de alto nivel de TensorFlow](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.11.png)
+![Figura 1-11. Arquitectura de alto nivel de TensorFlow](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.11.png)
 
 El proceso de crear modelos de aprendizaje automático se llama entrenamiento. Aquí, una computadora utiliza un conjunto de algoritmos para aprender sobre las entradas y qué las diferencia entre sí. Por ejemplo, si deseas que una computadora reconozca gatos y perros, puedes usar muchas imágenes de ambos para crear un modelo. La computadora utilizará ese modelo para determinar qué hace que un gato sea un gato y qué hace que un perro sea un perro. Una vez que el modelo está entrenado, el proceso de usarlo para reconocer o clasificar entradas futuras se llama inferencia.
 
@@ -142,22 +142,22 @@ print(tf.__version__)
 
 Deberías ver una salida como la de la Figura 1-12. Esto imprimirá la versión actualmente en ejecución de TensorFlow; aquí puedes ver que está instalada la versión 2.0.0.
 
-![Figura 1-12. Ejecución de TensorFlow en Python](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.12.png)
+![Figura 1-12. Ejecución de TensorFlow en Python](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.12.png)
 
 ### Usando TensorFlow en PyCharm
 Soy particularmente partidario de usar la versión gratuita de la comunidad de PyCharm para construir modelos con TensorFlow. PyCharm es útil por muchas razones, pero una de mis favoritas es que facilita la gestión de entornos virtuales. Esto significa que puedes tener entornos de Python con versiones de herramientas como TensorFlow específicas para tu proyecto en particular. Por ejemplo, si deseas usar TensorFlow 2.0 en un proyecto y TensorFlow 2.1 en otro, puedes separar estos con entornos virtuales y evitar tener que instalar/desinstalar dependencias al cambiar de proyecto. Además, con PyCharm puedes realizar una depuración paso a paso de tu código en Python, algo imprescindible, especialmente si estás comenzando.
 
 Por ejemplo, en la Figura 1-13 tengo un nuevo proyecto llamado example1 y estoy especificando que voy a crear un nuevo entorno usando Conda. Al crear el proyecto, tendré un entorno virtual limpio de Python en el cual puedo instalar cualquier versión de TensorFlow que desee.
 
-![Figura 1-13. Creación de un nuevo entorno virtual mediante PyCharm](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.13.png)
+![Figura 1-13. Creación de un nuevo entorno virtual mediante PyCharm](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.13.png)
 
 Una vez que has creado un proyecto, puedes abrir el cuadro de diálogo de File → Settings y elegir la entrada para "Project: <nombre de tu proyecto>" en el menú de la izquierda. Luego verás opciones para cambiar la configuración del Project Interpreter y la Project Structure. Elige el enlace de Project Interpreter, y verás el intérprete que estás utilizando, así como una lista de los paquetes que están instalados en este entorno virtual (Figura 1-14).
 
-![Figura 1-14. Adición de paquetes a un entorno virtual](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.14.png)
+![Figura 1-14. Adición de paquetes a un entorno virtual](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.14.png)
 
 Haz clic en el botón + a la derecha, y se abrirá un cuadro de diálogo mostrando los paquetes que están disponibles actualmente. Escribe "tensorflow" en el cuadro de búsqueda y verás todos los paquetes disponibles con "tensorflow" en el nombre (Figura 1-15).
 
-![Figura 1-15. Instalación de TensorFlow con PyCharm](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.15.png)
+![Figura 1-15. Instalación de TensorFlow con PyCharm](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.15.png)
 
 Una vez que hayas seleccionado TensorFlow, o cualquier otro paquete que desees instalar, haz clic en el botón Install Package, y PyCharm hará el resto. 
 
@@ -168,11 +168,11 @@ Otra opción, que quizás sea la más fácil para comenzar, es usar Google Colab
 
 Cuando visitas el sitio web de Colab, tendrás la opción de abrir Colabs anteriores o iniciar un nuevo cuaderno, como se muestra en la Figura 1-16.
 
-![Figura 1-16. Introducción a Google Colab](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.16.png)
+![Figura 1-16. Introducción a Google Colab](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.16.png)
 
 Al hacer clic en el enlace New Python 3 Notebook, se abrirá el editor, donde puedes agregar paneles de código o texto (Figura 1-17). Puedes ejecutar el código haciendo clic en el botón Play (la flecha) a la izquierda del panel.
 
-![Figura 1-17. Ejecución del código TensorFlow en Colab](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.17.png)
+![Figura 1-17. Ejecución del código TensorFlow en Colab](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.17.png)
 
 Siempre es una buena idea verificar la versión de TensorFlow, como se muestra aquí, para asegurarte de que estás ejecutando la versión correcta. A menudo, la versión incorporada de TensorFlow en Colab estará una o dos versiones detrás de la última versión. Si ese es el caso, puedes actualizarla con pip install, como se mostró anteriormente, simplemente usando un bloque de código como este:
 
@@ -214,7 +214,7 @@ print(model.predict(np.array([10.0])))
 
 Has oído hablar de redes neuronales y probablemente hayas visto diagramas que las explican usando capas de neuronas interconectadas, algo como la Figura 1-18.
 
-![Figura 1-18. Una red neuronal típica](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.18.png)
+![Figura 1-18. Una red neuronal típica](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.18.png)
 
 Cuando ves una red neuronal como esta, considera cada uno de los "círculos" como una neurona, y cada columna de círculos como una capa. Entonces, en la Figura 1-18, hay tres capas: la primera tiene cinco neuronas, la segunda tiene cuatro, y la tercera tiene dos.
 
@@ -259,11 +259,11 @@ Puedes leer esto como "ajusta los Xs a los Ys, e inténtalo 500 veces". Entonces
 
 La Figura 1-19 muestra una captura de pantalla de esto ejecutándose en un cuaderno Colab. Echa un vistazo a los valores de pérdida a lo largo del tiempo.
 
-![Figura 1-19. Entrenando la red neuronal](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.19.png)
+![Figura 1-19. Entrenando la red neuronal](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.19.png)
 
 Podemos ver que durante las primeras 10 épocas, la pérdida pasó de 3.2868 a 0.9682. Es decir, después de solo 10 intentos, la red estaba funcionando tres veces mejor que con su suposición inicial. Luego observa lo que ocurre en la quingentésima época (Figura 1-20).
 
-![Figura 1-20. Entrenando la red neuronal: las últimas cinco épocas](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.20.png)
+![Figura 1-20. Entrenando la red neuronal: las últimas cinco épocas](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.20.png)
 
 Ahora podemos ver que la pérdida es 2.61 × 10⁻⁵. La pérdida se ha vuelto tan pequeña que el modelo prácticamente ha descubierto que la relación entre los números es Y = 2X – 1. La máquina ha aprendido el patrón entre ellos.
 

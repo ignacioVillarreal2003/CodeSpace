@@ -13,7 +13,7 @@ En este capítulo aprenderás cómo usar convoluciones para detectar caracterís
 ## Convoluciones
 Una convolución es simplemente un filtro de pesos que se utiliza para multiplicar un píxel con sus vecinos y obtener un nuevo valor para el píxel. Por ejemplo, considera la imagen de un botín del conjunto Fashion MNIST y los valores de píxeles que se muestran en la Figura 3-1.
 
-![Figura 3-1. Botín con convolución](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.1.png)
+![Figura 3-1. Botín con convolución](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.1.png)
 
 Si miramos el píxel en el centro de la selección, podemos ver que tiene el valor 192 (recuerda que Fashion MNIST utiliza imágenes monocromáticas con valores de píxel entre 0 y 255). El píxel arriba y a la izquierda tiene el valor 0, el que está inmediatamente arriba tiene el valor 64, etc.
 
@@ -33,11 +33,11 @@ Consideremos el impacto de aplicar un filtro en una imagen más complicada: la i
 
 Usar un filtro con valores negativos en la izquierda, positivos en la derecha y ceros en el medio terminará eliminando la mayor parte de la información de la imagen, excepto por las líneas verticales, como puedes ver en la Figura 3-2.
 
-![Figura 3-2. Usando un filtro para obtener líneas verticales](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.2.png)
+![Figura 3-2. Usando un filtro para obtener líneas verticales](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.2.png)
 
 De manera similar, un pequeño cambio en el filtro puede enfatizar las líneas horizontales, como se muestra en la Figura 3-3.
 
-![Figura 3-3. Usando un filtro para obtener líneas horizontales](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.3.png)
+![Figura 3-3. Usando un filtro para obtener líneas horizontales](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.3.png)
 
 Estos ejemplos también muestran que la cantidad de información en la imagen se reduce, por lo que podemos aprender un conjunto de filtros que reduzcan la imagen a características, y esas características pueden coincidir con las etiquetas como antes. Anteriormente, aprendimos parámetros que se usaban en las neuronas para hacer coincidir entradas con salidas. De manera similar, los mejores filtros para hacer coincidir entradas con salidas pueden aprenderse con el tiempo.
 
@@ -46,7 +46,7 @@ Cuando se combinan con pooling, podemos reducir la cantidad de información en l
 ## Pooling
 El pooling es el proceso de eliminar píxeles en tu imagen mientras mantienes la semántica del contenido dentro de la imagen. Se explica mejor visualmente. La Figura 3-4 muestra el concepto de max pooling.
 
-![Figura 3-4. Demostrando max pooling](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.4.png)
+![Figura 3-4. Demostrando max pooling](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.4.png)
 
 En este caso, considera el recuadro a la izquierda como los píxeles en una imagen monocromática. Luego los agrupamos en matrices de 2 × 2, por lo que en este caso los 16 píxeles se agrupan en cuatro matrices de 2 × 2. Estas se llaman pools.
 
@@ -54,7 +54,7 @@ Luego seleccionamos el valor máximo de cada uno de los grupos y los volvemos a 
 
 La Figura 3-5 muestra la versión de ascent de la Figura 3-2, con las líneas verticales mejoradas, después de que se ha aplicado max pooling.
 
-![Figura 3-5. Ascent después del filtro vertical y max pooling](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.5.png)
+![Figura 3-5. Ascent después del filtro vertical y max pooling](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.5.png)
 
 Observa cómo las características filtradas no solo se han mantenido, sino que se han mejorado aún más. Además, el tamaño de la imagen ha cambiado de 512 × 512 a 256 × 256, un cuarto del tamaño original.
 
@@ -185,7 +185,7 @@ Non-trainable params: 0
 
 Primero echemos un vistazo a la columna Output Shape para entender lo que sucede aquí. Nuestra primera capa manejará imágenes de 28 × 28 píxeles y aplicará 64 filtros sobre ellas. Pero como nuestro filtro es de 3 × 3, se perderá un borde de 1 píxel alrededor de la imagen, reduciendo nuestra información general a 26 × 26 píxeles. Considera la Figura 3-6. Si tomamos cada cuadro como un píxel en la imagen, el primer filtro posible comenzará en la segunda fila y la segunda columna. Lo mismo ocurre en el lado derecho y en la parte inferior del diagrama.
 
-![Figura 3-6. Pérdida de píxeles al ejecutar un filtro](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.6.png)
+![Figura 3-6. Pérdida de píxeles al ejecutar un filtro](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.6.png)
 
 Por lo tanto, una imagen de forma A × B píxeles, al pasar por un filtro de 3 × 3, se convertirá en una de (A–2) × (B–2) píxeles. De manera similar, un filtro de 5 × 5 la haría de (A–4) × (B–4), y así sucesivamente. Dado que estamos usando una imagen de 28 × 28 píxeles y un filtro de 3 × 3, nuestra salida ahora será de 26 × 26 píxeles.
 
@@ -225,7 +225,7 @@ En esta sección exploraremos un escenario más complejo que el clasificador de 
 ### El Conjunto de Datos Horses or Humans
 Este conjunto de datos contiene más de mil imágenes de 300 × 300 píxeles, aproximadamente la mitad de caballos y la otra mitad de humanos, presentados en diferentes poses. A continuación se muestran algunos ejemplos en la Figura 3-7.
 
-![Figura 3-7. Caballos y Humanos](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.7.png)
+![Figura 3-7. Caballos y Humanos](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.7.png)
 
 Como se puede observar, los sujetos tienen diferentes orientaciones y poses, y la composición de las imágenes varía. Por ejemplo, los dos caballos tienen sus cabezas orientadas de forma distinta: uno está más alejado, mostrando al animal completo, mientras que el otro está más cerca, mostrando solo la cabeza y parte del cuerpo. Similarmente, los humanos tienen diferentes tonos de piel, iluminación y poses. El hombre tiene las manos en las caderas, mientras que la mujer las tiene extendidas. Además, las imágenes incluyen fondos como árboles y playas, lo que implica que el clasificador debe determinar qué partes de la imagen son características importantes para distinguir entre un caballo y un humano, sin ser influenciado por el fondo.
 
@@ -254,7 +254,7 @@ zip_ref.extractall(training_dir)
 zip_ref.close()
 ```
 
-![Figura 3-8. Asegurando que las imágenes estén en subdirectorios con nombres](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.8.png)
+![Figura 3-8. Asegurando que las imágenes estén en subdirectorios con nombres](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.8.png)
 
 Este código descarga el archivo ZIP de los datos de entrenamiento y lo descomprime en un directorio llamado horse-or-human/training. Este será el directorio principal que contendrá subdirectorios para cada tipo de imagen.
 
@@ -435,11 +435,11 @@ Una vez que hayas entrenado el modelo, verás una sección llamada “Ejecutando
 
 La Figura 3-9 muestra algunas imágenes de caballos y humanos que descargué de Pixabay para probar el modelo.
 
-![Figura 3-9. Imágenes de prueba](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.9.png)
+![Figura 3-9. Imágenes de prueba](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.9.png)
 
 Cuando las subí, como puedes ver en la Figura 3-10, el modelo clasificó correctamente la primera imagen como un humano y la tercera imagen como un caballo, pero la imagen del medio, a pesar de ser obviamente un humano, fue clasificada incorrectamente como un caballo.
 
-![Figura 3-10. Ejecutando el modelo](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.10.png)
+![Figura 3-10. Ejecutando el modelo](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.10.png)
 
 También puedes cargar múltiples imágenes simultáneamente y hacer que el modelo haga predicciones para todas ellas. Puede que notes que tiende a sobreajustarse hacia los caballos. Si el humano no está completamente posado—es decir, si no puedes ver su cuerpo completo—puede inclinarse hacia los caballos. Eso fue lo que ocurrió en este caso. El primer humano está completamente posado y la imagen se parece a muchas de las poses del conjunto de datos, por lo que pudo clasificarla correctamente. El segundo humano estaba frente a la cámara, pero solo aparece la mitad superior de su cuerpo en la imagen. No había datos de entrenamiento que se vieran así, por lo que el modelo no pudo identificarla correctamente.
 
@@ -490,11 +490,11 @@ En la sección anterior, construiste un modelo clasificador de caballos o humano
 
 Una forma de lidiar con tales problemas es mediante el aumento de imágenes. La idea detrás de esta técnica es que, mientras TensorFlow carga tus datos, puede crear datos adicionales nuevos modificando lo que tiene usando una serie de transformaciones. Por ejemplo, mira la Figura 3-11. Aunque no hay nada en el conjunto de datos que se parezca a la mujer de la derecha, la imagen de la izquierda es algo similar.
 
-![Figura 3-11. Similitudes en el conjunto de datos](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.11.png)
+![Figura 3-11. Similitudes en el conjunto de datos](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.11.png)
 
 Entonces, si pudieras, por ejemplo, hacer un zoom en la imagen de la izquierda mientras entrenas, como se muestra en la Figura 3-12, aumentarías las posibilidades de que el modelo pueda clasificar correctamente la imagen de la derecha como una persona.
 
-![Figura 3-12. Haciendo zoom en los datos del conjunto de entrenamiento](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.12.png)
+![Figura 3-12. Haciendo zoom en los datos del conjunto de entrenamiento](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.12.png)
 
 De manera similar, puedes ampliar el conjunto de entrenamiento con una variedad de otras transformaciones, incluyendo:
 
@@ -541,7 +541,7 @@ En mi caso, cuando entrené con estos aumentos, mi precisión bajó del 99% al 8
 
 ¿Qué pasa con la imagen de la Figura 3-9 que clasificó mal antes? Esta vez, la clasifica correctamente. Gracias a los aumentos de imágenes, ahora el conjunto de entrenamiento tiene suficiente cobertura para que el modelo entienda que esta imagen en particular también es un ser humano (ver Figura 3-13). Este es solo un punto de datos, y puede no ser representativo de los resultados para datos reales, pero es un pequeño paso en la dirección correcta.
 
-![Figura 3-13. La mujer con zoom ahora se clasifica correctamente](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.13.png)
+![Figura 3-13. La mujer con zoom ahora se clasifica correctamente](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.13.png)
 
 Como puedes ver, incluso con un conjunto de datos relativamente pequeño como Caballos o Humanos, puedes comenzar a construir un clasificador bastante decente. Con conjuntos de datos más grandes podrías llevar esto más lejos. Otra técnica para mejorar el modelo es usar características que ya se han aprendido en otro lugar. Muchos investigadores con enormes recursos (millones de imágenes) y grandes modelos entrenados en miles de clases han compartido sus modelos, y utilizando un concepto llamado aprendizaje por transferencia, puedes usar las características que esos modelos aprendieron y aplicarlas a tus datos. ¡Exploraremos eso a continuación!
 
@@ -556,11 +556,11 @@ Por ejemplo, nuestro conjunto de datos de Caballos o Humanos tiene solo dos clas
 
 La Figura 3-14 muestra cómo podría ser una arquitectura de CNN para una tarea de clasificación como la nuestra. Tenemos una serie de capas convolucionales que conducen a una capa densa, que a su vez conduce a una capa de salida.
 
-![Figura 3-14. Una arquitectura de red neuronal convolucional](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.14.png)
+![Figura 3-14. Una arquitectura de red neuronal convolucional](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.14.png)
 
 Hemos visto que podemos construir un clasificador bastante bueno usando esta arquitectura. Pero con el aprendizaje por transferencia, ¿qué pasa si podemos tomar las capas preaprendidas de otro modelo, congelarlas o bloquearlas para que no sean entrenables, y luego ponerlas encima de nuestro modelo, como en la Figura 3-15?
 
-![Figura 3-15. Tomando capas de otra arquitectura mediante aprendizaje por transferencia](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.15.png)
+![Figura 3-15. Tomando capas de otra arquitectura mediante aprendizaje por transferencia](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.15.png)
 
 Cuando consideramos que, una vez que han sido entrenadas, todas estas capas son solo un conjunto de números que indican los valores de los filtros, los pesos y los sesgos, junto con una arquitectura conocida (número de filtros por capa, tamaño del filtro, etc.), la idea de reutilizarlas es bastante directa.
 
@@ -621,7 +621,7 @@ model.compile(optimizer=RMSprop(learning_rate=0.0001),
 
 Entrenar el modelo con esta arquitectura durante 40 épocas dio una precisión del 99%+, con una precisión de validación del 96%+ (ver Figura 3-16).
 
-![Figura 3-16. Entrenando el clasificador de caballos o humanos con aprendizaje por transferencia](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.16.png)
+![Figura 3-16. Entrenando el clasificador de caballos o humanos con aprendizaje por transferencia](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.16.png)
 
 Los resultados aquí son mucho mejores que con nuestro modelo anterior, pero puedes seguir ajustando y mejorándolo. También puedes explorar cómo funcionará el modelo con un conjunto de datos mucho más grande, como el famoso "Dogs vs. Cats" de Kaggle. Este es un conjunto de datos extremadamente variado que consiste en 25,000 imágenes de gatos y perros, a menudo con los sujetos algo ocultos; por ejemplo, si son sostenidos por un humano.
 
@@ -629,12 +629,12 @@ Usando el mismo algoritmo y diseño de modelo que antes, puedes entrenar un clas
 
 Cuando se probó con imágenes muy complejas como las de la Figura 3-17, este clasificador las clasificó todas correctamente. Elegí una imagen de un perro con orejas parecidas a las de un gato, y una con su espalda vuelta. Ambas imágenes de gatos no eran típicas.
 
-![Figura 3-17. Perros y gatos inusuales que fueron clasificados correctamente](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.17.png)
+![Figura 3-17. Perros y gatos inusuales que fueron clasificados correctamente](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.17.png)
 
 El gato en la esquina inferior derecha, con los ojos cerrados, las orejas hacia abajo y la lengua afuera mientras se lavaba la pata, dio los resultados de la Figura 3-18 cuando se cargó en el modelo. Puedes ver que dio un valor muy bajo (4.98 × 10–24), lo que muestra que la red estaba casi segura de que era un gato.
 
 
-![Figura 3-18. Clasificando al gato que se lava la pata](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.18.png)
+![Figura 3-18. Clasificando al gato que se lava la pata](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.18.png)
 
 Puedes encontrar el código completo para los clasificadores de Caballos o Humanos y Dogs vs. Cats en el repositorio de GitHub de este libro.
 
@@ -649,7 +649,7 @@ Hay dos descargas: un conjunto de entrenamiento de muchas manos diversas, con di
 
 Puedes ver algunos ejemplos en la Figura 3-19.
 
-![Figura 3-19. Ejemplos de gestos de Piedra/Papel/Tijeras](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.19.png)
+![Figura 3-19. Ejemplos de gestos de Piedra/Papel/Tijeras](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.19.png)
 
 Usar el conjunto de datos es simple. Descárgalo y descomprímelo; los subdirectorios ya están organizados en el archivo ZIP; luego utilízalo para inicializar un ImageDataGenerator:
 
@@ -749,7 +749,7 @@ for fn in uploaded.keys():
 
 Ten en cuenta que no analiza la salida, solo imprime las clases. La Figura 3-20 muestra cómo se ve al usarlo.
 
-![Figura 3-20. Probando el clasificador de Piedra/Papel/Tijeras](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.20.png)
+![Figura 3-20. Probando el clasificador de Piedra/Papel/Tijeras](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.20.png)
 
 Puedes ver desde los nombres de archivo qué imágenes eran. Paper1.png terminó siendo [1, 0, 0], lo que significa que la primera neurona se activó y las demás no. De manera similar, Rock1.png terminó siendo [0, 1, 0], activando la segunda neurona, y Scissors2.png fue [0, 0, 1]. ¡Recuerda que las neuronas están en orden alfabético por etiqueta!
 
@@ -764,11 +764,11 @@ Además, las neuronas vecinas pueden terminar con pesos y sesgos similares, lo q
 
 Por ejemplo, considera la red neuronal en la Figura 3-21, donde hay capas de 2, 6, 6 y 2 neuronas. Las neuronas en las capas intermedias podrían terminar con pesos y sesgos muy similares.
 
-![Figura 3-21. Una red neuronal simple](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.21.png)
+![Figura 3-21. Una red neuronal simple](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.21.png)
 
 Mientras entrenas, si eliminas un número aleatorio de neuronas y las ignoras, su contribución a las neuronas de la siguiente capa se bloquea temporalmente (Figura 3-22).
 
-![Figura 3-22. Una red neuronal con dropout](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.22.png)
+![Figura 3-22. Una red neuronal con dropout](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure3.22.png)
 
 Esto reduce las probabilidades de que las neuronas se vuelvan demasiado especializadas. La red seguirá aprendiendo el mismo número de parámetros, pero debería ser mejor para generalizar, es decir, debería ser más resistente a diferentes entradas.
 

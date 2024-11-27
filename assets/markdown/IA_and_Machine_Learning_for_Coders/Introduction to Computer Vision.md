@@ -4,7 +4,7 @@ El capítulo anterior introdujo los conceptos básicos de cómo funciona el apre
 ## Reconociendo Artículos de Ropa
 Para nuestro primer ejemplo, consideremos lo que se necesita para reconocer artículos de ropa en una imagen. Considera, por ejemplo, los artículos en la Figura 2-1.
 
-![Figura 2-1. Ejemplos de ropa](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure2.1.png)
+![Figura 2-1. Ejemplos de ropa](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure2.1.png)
 
 Aquí hay varios artículos de ropa diferentes, y puedes reconocerlos. Entiendes qué es una camisa, un abrigo o un vestido. Pero, ¿cómo explicarías esto a alguien que nunca ha visto ropa? ¿Y qué hay de un zapato? Hay dos zapatos en esta imagen, pero ¿cómo describirías eso a alguien? Este es otro caso en el que la programación basada en reglas, de la que hablamos en el Capítulo 1, puede fallar. A veces, simplemente no es viable describir algo con reglas.
 
@@ -15,13 +15,13 @@ Uno de los conjuntos de datos fundamentales para aprender y evaluar algoritmos e
 
 Fashion MNIST está diseñado para ser un reemplazo directo de MNIST, con el mismo número de registros, las mismas dimensiones de imagen y el mismo número de clases. Pero, en lugar de imágenes de los dígitos del 0 al 9, Fashion MNIST contiene imágenes de 10 tipos diferentes de ropa. Puedes ver un ejemplo del contenido del conjunto de datos en la Figura 2-2. Aquí, se dedican tres líneas a cada tipo de artículo de ropa.
 
-![Figura 2-2. Explorando el conjunto de datos Fashion MNIST](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure2.2.png)
+![Figura 2-2. Explorando el conjunto de datos Fashion MNIST](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure2.2.png)
 
 Incluye una buena variedad de ropa, como camisas, pantalones, vestidos y muchos tipos de zapatos. Como puedes notar, es monocromático, por lo que cada imagen consiste en un cierto número de píxeles con valores entre 0 y 255. Esto hace que el conjunto de datos sea más sencillo de manejar.
 
 Puedes ver un primer plano de una imagen específica del conjunto de datos en la Figura 2-3.
 
-![Figura 2-3. Primer plano de una imagen en el conjunto de datos Fashion MNIST](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure2.3.png)
+![Figura 2-3. Primer plano de una imagen en el conjunto de datos Fashion MNIST](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure2.3.png)
 
 Como cualquier imagen, es una cuadrícula rectangular de píxeles. En este caso, el tamaño de la cuadrícula es 28 × 28, y cada píxel es simplemente un valor entre 0 y 255, como se mencionó anteriormente. Ahora veamos cómo puedes usar estos valores de píxeles con las funciones que vimos previamente.
 
@@ -32,13 +32,13 @@ Si lo representaras visualmente, podría verse como la Figura 2-4.
 
 Cada una de nuestras imágenes es un conjunto de 784 valores (28 × 28) entre 0 y 255. Estos pueden ser nuestro X. Sabemos que tenemos 10 tipos diferentes de imágenes en nuestro conjunto de datos, así que consideremos que estos son nuestro Y. Ahora queremos aprender cómo se ve la función donde Y es una función de X.
 
-![Figura 2-4. Una sola neurona aprendiendo una relación lineal](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure2.4.png)
+![Figura 2-4. Una sola neurona aprendiendo una relación lineal](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure2.4.png)
 
 Dado que tenemos 784 valores X por imagen, y nuestro Y estará entre 0 y 9, está bastante claro que no podemos usar Y = mX + c como hicimos antes.
 
 Pero lo que podemos hacer es tener varias neuronas trabajando juntas. Cada una de estas aprenderá parámetros, y cuando tenemos una función combinada de todos estos parámetros trabajando juntos, podemos ver si podemos ajustar ese patrón a nuestra respuesta deseada (Figura 2-5).
 
-![Figura 2-5. Extendiendo nuestro patrón para un ejemplo más complejo](/assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure2.5.png)
+![Figura 2-5. Extendiendo nuestro patrón para un ejemplo más complejo](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure2.5.png)
 
 Los cuadros en la parte superior de este diagrama pueden considerarse los píxeles de la imagen, o nuestros valores X. Cuando entrenamos la red neuronal, cargamos estos valores en una capa de neuronas. La Figura 2-5 muestra que solo se cargan en la primera neurona, pero en realidad los valores se cargan en todas ellas. Considera que el peso y sesgo (m y c) de cada neurona están inicializados aleatoriamente. Luego, al sumar los valores de la salida de cada neurona, obtenemos un valor. Esto se hará para cada neurona en la capa de salida, de modo que la neurona 0 contendrá el valor de la probabilidad de que los píxeles correspondan a la etiqueta 0, la neurona 1 a la etiqueta 1, y así sucesivamente.
 
