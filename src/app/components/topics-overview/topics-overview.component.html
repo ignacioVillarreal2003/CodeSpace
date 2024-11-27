@@ -1,0 +1,11 @@
+<div class="topics-overview">
+  <ul class="topics">
+    <li class="topic" *ngFor="let topic of topics">
+      <button (click)="openTopic(topic.id)">
+        <div class="title" [ngStyle]="{'background-color': topic.color}">
+          <h2>{{topic.title}}</h2>
+        </div>
+      </button>
+    </li>
+  </ul>
+</div>

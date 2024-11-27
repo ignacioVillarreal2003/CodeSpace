@@ -1,1 +1,165 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Ubuntu-Medium, serif;
+}
+
+h1, h2, h3, h4, p, button, a {
+  font-family: Ubuntu-Regular, sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: 'Ubuntu-Bold';
+  src: url('/fonts/Ubuntu-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Ubuntu-BoldItalic';
+  src: url('/fonts/Ubuntu-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Ubuntu-Italic';
+  src: url('/fonts/Ubuntu-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Ubuntu-Light';
+  src: url('/fonts/Ubuntu-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Ubuntu-LightItalic';
+  src: url('/fonts/Ubuntu-LightItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Ubuntu-Medium';
+  src: url('/fonts/Ubuntu-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Ubuntu-MediumItalic';
+  src: url('/fonts/Ubuntu-MediumItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Ubuntu-Regular';
+  src: url('/fonts/Ubuntu-Regular.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'Cantarell-Bold';
+  src: url('/fonts/Cantarell-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cantarell-BoldItalic';
+  src: url('/fonts/Cantarell-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cantarell-Italic';
+  src: url('/fonts/Cantarell-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cantarell-Regular';
+  src: url('/fonts/Cantarell-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Tanker-Regular';
+  src: url('/fonts/Tanker-Regular.ttf') format('truetype');
+}
+
+.markdown-body h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+}
+
+.markdown-body h2 {
+  font-size: 1.8rem;
+  margin-top: 1.5rem;
+  color: #34495e;
+}
+
+.markdown-body h3 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: #7f8c8d;
+}
+
+.markdown-body p {
+  margin: 10px 0;
+  color: #4d4d4d;
+}
+
+.markdown-body ul {
+  margin: 10px 0 10px 20px;
+  list-style-type: disc;
+}
+
+.markdown-body ul ul {
+  list-style-type: circle;
+}
+
+.markdown-body li {
+  margin-bottom: 5px;
+}
+
+.markdown-body img {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.markdown-body pre {
+  background: #2d2d2d;
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin: 20px 0;
+  font-size: 0.9rem;
+}
+
+.markdown-body code {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.markdown-body p code, li code {
+  background: #f4f4f4;
+  color: #c7254e;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.markdown-body blockquote {
+  font-style: italic;
+  color: #555;
+  border-left: 4px solid #3498db;
+  margin: 10px 0;
+  padding-left: 15px;
+  background: #f4f8fb;
+}

@@ -1,0 +1,11 @@
+<div class="units-overview">
+  <ul class="units">
+    <li class="unit" *ngFor="let unit of units">
+      <button (click)="openUnit(unit.id)">
+        <div class="title" [ngStyle]="{'background-color': unit.color}">
+          <h2>{{unit.title}}</h2>
+        </div>
+      </button>
+    </li>
+  </ul>
+</div>
