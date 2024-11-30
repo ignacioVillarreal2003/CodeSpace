@@ -10,7 +10,7 @@ Aquí hay varios artículos de ropa diferentes, y puedes reconocerlos. Entiendes
 
 Por supuesto, la visión por computadora no es una excepción. Pero considera cómo aprendiste a reconocer todos estos artículos: viendo muchos ejemplos diferentes y adquiriendo experiencia sobre cómo se usan. ¿Podemos hacer lo mismo con una computadora? La respuesta es sí, pero con limitaciones. Veamos un primer ejemplo de cómo enseñar a una computadora a reconocer artículos de ropa, utilizando un conjunto de datos bien conocido llamado Fashion MNIST.
 
-## Los Datos: Fashion MNIST
+### Los Datos: Fashion MNIST
 Uno de los conjuntos de datos fundamentales para aprender y evaluar algoritmos es la base de datos Modified National Institute of Standards and Technology (MNIST), creada por Yann LeCun, Corinna Cortes y Christopher Burges. Este conjunto de datos está compuesto por imágenes de 70,000 dígitos escritos a mano del 0 al 9. Las imágenes tienen un tamaño de 28 × 28 y son en escala de grises.
 
 Fashion MNIST está diseñado para ser un reemplazo directo de MNIST, con el mismo número de registros, las mismas dimensiones de imagen y el mismo número de clases. Pero, en lugar de imágenes de los dígitos del 0 al 9, Fashion MNIST contiene imágenes de 10 tipos diferentes de ropa. Puedes ver un ejemplo del contenido del conjunto de datos en la Figura 2-2. Aquí, se dedican tres líneas a cada tipo de artículo de ropa.
@@ -75,7 +75,7 @@ Finalmente, hay otra capa Dense, que es la capa de salida. Esta tiene 10 neurona
 
 Entonces, cuando entrenamos nuestra red neuronal, el objetivo es que podamos alimentar un arreglo de píxeles de 28 × 28 y las neuronas en la capa intermedia tendrán pesos y sesgos (valores m y c) que, al combinarse, harán coincidir esos píxeles con uno de los 10 valores de salida.
 
-## Código Completo
+### Código Completo
 Ahora que hemos explorado la arquitectura de la red neuronal, veamos el código completo para entrenar una con los datos de Fashion MNIST:
 
 ```python

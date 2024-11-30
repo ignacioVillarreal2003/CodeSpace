@@ -1,11 +1,18 @@
 <div class="topics-overview">
-  <ul class="topics">
-    <li class="topic" *ngFor="let topic of topics">
-      <button (click)="openTopic(topic.id)">
-        <div class="title" [ngStyle]="{'background-color': topic.color}">
-          <h2>{{topic.title}}</h2>
-        </div>
-      </button>
-    </li>
-  </ul>
+  <div class="container">
+    <ul class="categories">
+      <li class="category" *ngFor="let category of categories">
+        <button (click)="openTopics(category.id)">{{category.title}}</button>
+      </li>
+    </ul>
+    <ul class="topics">
+      <li class="topic" *ngFor="let topic of topics">
+        <button (click)="openTopic(topic.id)">
+          <div class="title" [ngStyle]="{'background-color': topic.color}">
+            <h2>{{topic.title}}</h2>
+          </div>
+        </button>
+      </li>
+    </ul>
+  </div>
 </div>

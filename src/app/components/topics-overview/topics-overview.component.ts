@@ -3,6 +3,7 @@ import {NgForOf, NgStyle} from "@angular/common";
 import {Topic} from '../../content/topic';
 import {DataService} from '../../services/data.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import { Category } from '../../content/category';
 
 @Component({
   selector: 'app-topics-overview',
@@ -15,15 +16,18 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrl: './topics-overview.component.css'
 })
 export class TopicsOverviewComponent {
+  categories: Category[] = []
   topics: Topic[] = []
 
   constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-    const categoryId: string | null = this.route.snapshot.paramMap.get('categoryId');
-    if (categoryId != null) {
-      this.topics = this.dataService.getTopics(categoryId);
-    }
+    this.categories = this.dataService.getCategories();
+    
+  }
+
+  openTopics(categoryId: string): void {
+    this.topics = this.dataService.getTopics(categoryId);
   }
 
   openTopic(topicId: string): void {

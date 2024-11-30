@@ -3,15 +3,11 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'categoriesOverview',
+    redirectTo: 'topicsOverview',
     pathMatch: 'full',
   },
   {
-    path: 'categoriesOverview',
-    loadComponent: () => import('./components/categories-overview/categories-overview.component').then(m => m.CategoriesOverviewComponent),
-  },
-  {
-    path: 'topicsOverview/:categoryId',
+    path: 'topicsOverview',
     loadComponent: () => import('./components/topics-overview/topics-overview.component').then(m => m.TopicsOverviewComponent),
   },
   {

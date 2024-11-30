@@ -151,7 +151,7 @@ Por ejemplo, en la Figura 1-13 tengo un nuevo proyecto llamado example1 y estoy 
 
 ![Figura 1-13. Creación de un nuevo entorno virtual mediante PyCharm](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.13.png)
 
-Una vez que has creado un proyecto, puedes abrir el cuadro de diálogo de File → Settings y elegir la entrada para "Project: <nombre de tu proyecto>" en el menú de la izquierda. Luego verás opciones para cambiar la configuración del Project Interpreter y la Project Structure. Elige el enlace de Project Interpreter, y verás el intérprete que estás utilizando, así como una lista de los paquetes que están instalados en este entorno virtual (Figura 1-14).
+Una vez que has creado un proyecto, puedes abrir el cuadro de diálogo de File → Settings y elegir la entrada para "Project: < nombre de tu proyecto >" en el menú de la izquierda. Luego verás opciones para cambiar la configuración del Project Interpreter y la Project Structure. Elige el enlace de Project Interpreter, y verás el intérprete que estás utilizando, así como una lista de los paquetes que están instalados en este entorno virtual (Figura 1-14).
 
 ![Figura 1-14. Adición de paquetes a un entorno virtual](./assets/markdown/IA_and_Machine_Learning_for_Coders/img/figure1.14.png)
 
@@ -281,7 +281,7 @@ El modelo solo tiene una sola neurona, y esa neurona aprende un peso y un sesgo,
 
 Ejecuta el código por ti mismo para ver qué obtienes. Yo obtuve 18.977888 cuando lo ejecuté, pero tu respuesta puede diferir ligeramente porque cuando la red neuronal se inicializa por primera vez hay un elemento aleatorio: tu suposición inicial será ligeramente diferente de la mía y de la de una tercera persona.
 
-## Viendo lo que la red aprendió
+### Viendo lo que la red aprendió
 Este es obviamente un escenario muy simple, donde estamos emparejando Xs con Ys en una relación lineal. Como se mencionó en la sección anterior, las neuronas tienen parámetros de peso y sesgo que aprenden, lo que hace que una sola neurona sea suficiente para aprender una relación como esta: es decir, cuando Y = 2X – 1, el peso es 2 y el sesgo es –1. Con TensorFlow, en realidad podemos echar un vistazo a los pesos y sesgos que se aprendieron, con un simple cambio en nuestro código como este:
 
 ```python
