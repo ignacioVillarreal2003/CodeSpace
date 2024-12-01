@@ -6,14 +6,11 @@ header {
     padding: 10px 20px;
 }
 
-a {
+.home {
     font-size: 22px;
     padding: 5px 10px;
-    background-color: transparent;
     border: none;
     font-family: 'Cantarell-Regular';
-    color: black;
-    text-decoration: none;
 }
 
 .hamburger {

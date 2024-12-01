@@ -38,4 +38,8 @@ export class HeaderComponent {
     const menu: HTMLInputElement = document.querySelector('input') as HTMLInputElement;
     menu.checked = false;
   }
+
+  openHome(): void {
+    this.router.navigate(['home'])
+  }
 }
