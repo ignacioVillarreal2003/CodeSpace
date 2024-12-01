@@ -11,6 +11,7 @@ header {
     padding: 5px 10px;
     border: none;
     font-family: 'Cantarell-Regular';
+    background-color: transparent;
 }
 
 .hamburger {
@@ -81,4 +82,14 @@ header {
 
 .category button:hover {
     font-size: 4vw;
+}
+
+@media (max-width: 900px) {
+    .category button {
+        font-size: 4vw;
+    }
+
+    .category button:hover {
+        font-size: 4.6vw;
+    }
 }
