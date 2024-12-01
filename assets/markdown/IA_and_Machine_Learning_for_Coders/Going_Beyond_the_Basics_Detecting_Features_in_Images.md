@@ -233,7 +233,7 @@ Mientras que los ejemplos anteriores, como predecir Y = 2X − 1 o clasificar pe
 
 Un dato interesante es que estas imágenes son generadas por computadora. La teoría es que las características detectadas en una imagen generada por computadora de un caballo deberían aplicarse a una imagen real. Más adelante en este capítulo veremos qué tan bien funciona esto.
 
-## Keras ImageDataGenerator
+### Keras ImageDataGenerator
 El conjunto de datos Fashion MNIST que hemos utilizado hasta ahora incluye etiquetas asociadas a cada imagen. Sin embargo, muchos conjuntos de datos basados en imágenes no tienen etiquetas, y Horses or Humans no es una excepción. En lugar de etiquetas, las imágenes están organizadas en subdirectorios según su tipo. Con Keras en TensorFlow, una herramienta llamada ImageDataGenerator puede usar esta estructura para asignar automáticamente etiquetas a las imágenes.
 
 Para utilizar ImageDataGenerator, simplemente necesitas asegurarte de que la estructura del directorio tenga un conjunto de subdirectorios con nombres, donde cada subdirectorio sea una etiqueta. Por ejemplo, el conjunto de datos Horses or Humans está disponible como un conjunto de archivos ZIP: uno con los datos de entrenamiento (más de 1,000 imágenes) y otro con los datos de validación (256 imágenes). Al descargarlos y descomprimirlos en un directorio local para entrenamiento y validación, la estructura del archivo debe verse como la Figura 3-8.
@@ -279,7 +279,7 @@ train_generator = train_datagen.flow_from_directory(
 
 Primero, creamos una instancia de un ImageDataGenerator llamado train_datagen. Luego, especificamos que este generará imágenes para el proceso de entrenamiento fluyendo desde un directorio. El directorio es training_dir, como se especificó anteriormente. También indicamos algunos hiperparámetros sobre los datos, como el tamaño objetivo (en este caso, las imágenes son de 300 × 300) y el modo de clase. Este último suele ser binary si solo hay dos tipos de imágenes (como en este caso) o categorical si hay más de dos.
 
-## Arquitectura CNN para Caballos o Humanos
+### Arquitectura CNN para Caballos o Humanos
 Existen varias diferencias importantes entre este conjunto de datos y el de Fashion MNIST que debes considerar al diseñar una arquitectura para clasificar las imágenes. Primero, las imágenes son mucho más grandes (300 × 300 píxeles), por lo que se pueden necesitar más capas. Segundo, las imágenes están en color completo, no en escala de grises, por lo que cada imagen tendrá tres canales en lugar de uno. Tercero, solo hay dos tipos de imágenes, por lo que tenemos un clasificador binario que se puede implementar utilizando solo una neurona de salida, donde los valores se aproximan a 0 para una clase y 1 para la otra. Ten en cuenta estas consideraciones al explorar esta arquitectura:
 
 ```python
@@ -373,7 +373,7 @@ En solo 15 épocas, esta arquitectura nos da una precisión muy impresionante de
 
 A continuación, veremos cómo agregar el conjunto de validación usando un generador y medir su rendimiento para darnos una buena indicación de cómo podría funcionar este modelo en la vida real.
 
-## Añadiendo Validación al Dataset Horses or Humans
+### Añadiendo Validación al Dataset Horses or Humans
 Para agregar validación, necesitarás un conjunto de datos de validación que sea independiente del de entrenamiento. En algunos casos recibirás un conjunto de datos maestro que tendrás que dividir tú mismo, pero en el caso de Horses or Humans, hay un conjunto de validación separado que puedes descargar.
 
 Puede que te preguntes por qué estamos hablando de un conjunto de datos de validación aquí, en lugar de un conjunto de prueba, y si son lo mismo.
@@ -426,7 +426,7 @@ Después de entrenar durante 15 épocas, deberías ver que tu modelo tiene una p
 
 Aun así, el rendimiento no es malo considerando lo pocas imágenes con las que fue entrenado y qué tan diversas eran esas imágenes. Estás comenzando a toparte con un límite causado por la falta de datos, pero hay algunas técnicas que puedes usar para mejorar el rendimiento de tu modelo. Las exploraremos más adelante en este capítulo, pero antes de eso veamos cómo usar este modelo.
 
-## Probando Imágenes de Horses or Humans
+### Probando Imágenes de Horses or Humans
 Construir un modelo está muy bien, pero por supuesto, querrás probarlo. Una de las principales frustraciones que tuve cuando comencé mi viaje en IA fue que podía encontrar mucho código que mostraba cómo construir modelos y gráficos de cómo estaban funcionando esos modelos, pero muy pocas veces había código para probar el modelo por mi cuenta. Intentaré evitar eso en este libro.
 
 Probar el modelo es quizás más fácil usando Colab. He proporcionado un notebook de Horses or Humans en GitHub que puedes abrir directamente en Colab.
@@ -485,7 +485,6 @@ Pero este conjunto de datos también demuestra un problema fundamental que enfre
 ¿Cuál es la solución? La solución obvia es agregar más datos de entrenamiento, con humanos en esa pose particular y otras que no estaban representadas inicialmente. Sin embargo, eso no siempre es posible. Por suerte, hay un truco interesante en TensorFlow que puedes usar para extender virtualmente tu conjunto de datos: se llama aumento de imágenes (image augmentation), y lo exploraremos a continuación.
 
 ## Aumento de Imágenes
-
 En la sección anterior, construiste un modelo clasificador de caballos o humanos que fue entrenado con un conjunto de datos relativamente pequeño. Como resultado, pronto comenzaste a enfrentar problemas al clasificar algunas imágenes no vistas previamente, como la mala clasificación de una mujer con un caballo, ya que el conjunto de entrenamiento no incluía imágenes de personas en esa pose.
 
 Una forma de lidiar con tales problemas es mediante el aumento de imágenes. La idea detrás de esta técnica es que, mientras TensorFlow carga tus datos, puede crear datos adicionales nuevos modificando lo que tiene usando una serie de transformaciones. Por ejemplo, mira la Figura 3-11. Aunque no hay nada en el conjunto de datos que se parezca a la mujer de la derecha, la imagen de la izquierda es algo similar.
