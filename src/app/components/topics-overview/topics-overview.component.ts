@@ -16,18 +16,15 @@ import { Category } from '../../content/category';
   styleUrl: './topics-overview.component.css'
 })
 export class TopicsOverviewComponent {
-  categories: Category[] = []
   topics: Topic[] = []
 
   constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-    this.categories = this.dataService.getCategories();
-    
-  }
-
-  openTopics(categoryId: string): void {
-    this.topics = this.dataService.getTopics(categoryId);
+    const categoryId: string | null = this.route.snapshot.paramMap.get('categoryId');
+    if (categoryId != null) {
+      this.topics = this.dataService.getTopics(categoryId);
+    }
   }
 
   openTopic(topicId: string): void {
