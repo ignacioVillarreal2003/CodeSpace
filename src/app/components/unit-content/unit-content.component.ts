@@ -1,5 +1,5 @@
 import { Component  } from '@angular/core';
-import { NgForOf, NgIf } from "@angular/common";
+import { NgFor, NgIf } from "@angular/common";
 import hljs from 'highlight.js';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../../services/data.service';
@@ -18,7 +18,7 @@ hljs.registerLanguage('csharp', csharp);
   selector: 'app-unit-content',
   standalone: true,
   imports: [
-    NgForOf,
+    NgFor,
     NgIf
   ],
   templateUrl: './unit-content.component.html',

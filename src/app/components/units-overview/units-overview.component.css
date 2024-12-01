@@ -4,19 +4,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
 .units {
-  width: 90%;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   list-style: none;
 }
 
 button {
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 2;
   border: none;
   background-color: transparent;
   display: flex;
@@ -39,15 +40,16 @@ button:hover .title {
 }
 
 h2 {
-  font-size: 18px;
+  font-size: 1.6vw;
+  width: 80%;
 }
 
 @media (max-width: 900px) {
   .units {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   h2 {
-    font-size: 12px;
+    font-size: 2.8vw;
   }
 }

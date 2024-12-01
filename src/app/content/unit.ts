@@ -11,7 +11,7 @@ export const units: Unit[] = [
     id: 'unit-001',
     topicId: "top-001",
     title: 'Introducción a TensorFlow',
-    color: "#C2FFC7",
+    color: "#438ccf",
     content: 'IA_and_Machine_Learning_for_Coders/Introduction to TensorFlow.md'
   },
   {
