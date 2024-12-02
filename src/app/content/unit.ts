@@ -49,4 +49,18 @@ export const units: Unit[] = [
     color: "#C2FFC7",
     content: 'IA_and_Machine_Learning_for_Coders/Chapter_6.md'
   },
+  {
+    id: 'unit-007',
+    topicId: "top-001",
+    title: 'Redes Neuronales Recurrentes para el Procesamiento de Lenguaje Natural',
+    color: "#C2FFC7",
+    content: 'IA_and_Machine_Learning_for_Coders/Chapter_7.md'
+  },
+  {
+    id: 'unit-008',
+    topicId: "top-001",
+    title: 'Usando TensorFlow para Crear Texto',
+    color: "#C2FFC7",
+    content: 'IA_and_Machine_Learning_for_Coders/Chapter_8.md'
+  },
 ];
