@@ -63,4 +63,11 @@ export const units: Unit[] = [
     color: "#C2FFC7",
     content: 'IA_and_Machine_Learning_for_Coders/Chapter_8.md'
   },
+  {
+    id: 'unit-009',
+    topicId: "top-001",
+    title: 'Comprensión de los datos de secuencia y series temporales',
+    color: "#C2FFC7",
+    content: 'IA_and_Machine_Learning_for_Coders/Chapter_9.md'
+  },
 ];
