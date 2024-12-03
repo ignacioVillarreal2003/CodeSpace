@@ -70,4 +70,11 @@ export const units: Unit[] = [
     color: "#C2FFC7",
     content: 'IA_and_Machine_Learning_for_Coders/Chapter_9.md'
   },
+  {
+    id: 'unit-010',
+    topicId: "top-001",
+    title: 'Creación de modelos de ML para predecir secuencias',
+    color: "#C2FFC7",
+    content: 'IA_and_Machine_Learning_for_Coders/Chapter_10.md'
+  },
 ];
