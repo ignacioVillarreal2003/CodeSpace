@@ -77,4 +77,13 @@ export const units: Unit[] = [
     color: "#C2FFC7",
     content: 'IA_and_Machine_Learning_for_Coders/Chapter_10.md'
   },
+  {
+    id: 'unit-011',
+    topicId: "top-001",
+    title: 'Usando Métodos Convolucionales y Recurrentes para Modelos de Secuencias',
+    color: "#C2FFC7",
+    content: 'IA_and_Machine_Learning_for_Coders/Chapter_11.md'
+  },
 ];
+
+
