@@ -215,10 +215,6 @@ Entrenar esta red requiere aprender el mejor conjunto de estos 243,786 parámetr
 
 Por supuesto, con este conjunto de datos todavía tenemos la limitación de que las imágenes son de 28 × 28 píxeles, monocromáticas y centradas. A continuación, exploraremos el uso de convoluciones con un conjunto de datos más complejo, compuesto por imágenes a color de caballos y humanos, e intentaremos determinar si una imagen contiene uno u otro. En este caso, el sujeto no siempre estará centrado como en Fashion MNIST, por lo que tendremos que depender de las convoluciones para detectar características distintivas.
 
-Construcción de una CNN para Distinguir entre Caballos y Humanos
-
-En esta sección exploraremos un escenario más complejo que el clasificador de Fashion MNIST. Ampliaremos lo aprendido sobre convoluciones y redes neuronales convolucionales para intentar clasificar el contenido de imágenes donde la ubicación de una característica no siempre está en el mismo lugar. Para ello, he creado el conjunto de datos Horses or Humans.
-
 ## Construcción de una CNN para Distinguir entre Caballos y Humanos
 En esta sección exploraremos un escenario más complejo que el clasificador de Fashion MNIST. Ampliaremos lo aprendido sobre convoluciones y redes neuronales convolucionales para intentar clasificar el contenido de imágenes donde la ubicación de una característica no siempre está en el mismo lugar. Para ello, he creado el conjunto de datos Horses or Humans.
 
